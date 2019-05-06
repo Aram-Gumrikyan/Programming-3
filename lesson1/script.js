@@ -133,9 +133,3 @@ function draw() {
        waterArr[i].move();
    }
 }
-
-
-
-
-
-

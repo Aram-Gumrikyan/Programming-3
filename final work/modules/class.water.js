@@ -1,4 +1,4 @@
-var matrix = require("./modules/class.water.js");
+var matrix = require("./modules/matrix.js");
 
 module.exports = class Water{
     constructor(x, y, index) {

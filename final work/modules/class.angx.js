@@ -1,4 +1,4 @@
-var matrix = require("./modules/class.angx.js");
+var matrix = require("./modules/matrix.js");
 
 module.exports = class Angx {
    constructor(x, y, index) {

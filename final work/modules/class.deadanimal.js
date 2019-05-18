@@ -1,4 +1,4 @@
-var matrix = require("./modules/class.deadanimal.js");
+var matrix = require("./modules/matrix.js");
 
 module.exports = class Deadanimal {
    constructor(x, y, index) {

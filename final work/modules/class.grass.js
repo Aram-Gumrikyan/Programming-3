@@ -1,4 +1,4 @@
-var matrix = require("./modules/class.grass.js"); 
+var matrix = require("./modules/matrix.js"); 
 
 module.exports = class Grass {
    constructor(x, y, index) {

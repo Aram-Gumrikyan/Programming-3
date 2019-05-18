@@ -1,4 +1,4 @@
-var matrix = require("./modules/class.wolf.js");
+var matrix = require("./modules/matrix.js");
 
 module.exports = class Wolf {
    constructor(x, y, index) {

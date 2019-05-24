@@ -1,6 +1,6 @@
 var matrix = require('./modules/matrix.js');
 var Grass = require('./modules/class.grass.js');
-var GrassEater = require('./modules/grasseater.js');
+var GrassEater = require('./modules/class.grasseater.js');
 var Angx = require('./modules/class.angx.js');
 var Deadanimal = require('./modules/class.deadanimal.js');
 var Water = require('./modules/class.water.js');
@@ -11,6 +11,7 @@ wolfArr = [];
 deadanimalsArr = [];
 angxArr = [];
 waterArr = [];
+grassHashiv = 0;
 function matrixGenerator(){
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
@@ -23,14 +24,14 @@ function matrixGenerator(){
             else if (matrix[y][x] == 3) {
                 wolfArr.push(new Wolf(x, y, 3));
             }
-            else if (matrix[y][x] == 4) {
-                deadanimalsArr.push(new Deadanimal(x, y, 4));
+            else if (matrix[y][x] == 6) {
+                deadanimalsArr.push(new Deadanimal(x, y, 6));
             }
             else if (matrix[y][x] == 5) {
                 angxArr.push(new Angx(x, y, 5));
             }
-            else if (matrix[y][x] == 6) {
-                waterArr.push(new Water(x, y, 6));
+            else if (matrix[y][x] == 4) {
+                waterArr.push(new Water(x, y, 4));
             }
         }
     }
@@ -52,6 +53,7 @@ function creatingObjects(){
         for (var x = 0; x < matrix[y].length; x++) {
             if (matrix[y][x] == 1) {
                 grassArr.push(new Grass(x, y, 1));
+                grassHashiv++;
             }
             else if (matrix[y][x] == 2) {
                 grasseaterArr.push(new GrassEater(x, y, 2));
@@ -59,14 +61,14 @@ function creatingObjects(){
             else if (matrix[y][x] == 3) {
                 wolfArr.push(new Wolf(x, y, 3));
             }
-            else if (matrix[y][x] == 4) {
-                deadanimalsArr.push(new Deadanimal(x, y, 4));
+            else if (matrix[y][x] == 6) {
+                deadanimalsArr.push(new Deadanimal(x, y, 6));
             }
             else if (matrix[y][x] == 5) {
                 angxArr.push(new Angx(x, y, 5));
             }
-            else if (matrix[y][x] == 6) {
-                waterArr.push(new Water(x, y, 6));
+            else if (matrix[y][x] == 4) {
+                waterArr.push(new Water(x, y, 4));
             }
         }
     }
@@ -95,6 +97,7 @@ function game(){
 
     var sendData = {
         matrix: matrix
+        grassCounter: grassHashiv
     }
 
     io.sockets.emit("data", sendData);

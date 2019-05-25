@@ -1,4 +1,5 @@
 var matrix = require("./matrix.js"); 
+var random = require("./random.js");
 
 module.exports = class Grass {
    constructor(x, y, index) {

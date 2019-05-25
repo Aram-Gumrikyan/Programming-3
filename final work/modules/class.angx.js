@@ -1,4 +1,6 @@
 var matrix = require("./matrix.js");
+var random = require("./random.js");
+var Deadanimal = require("./class.deadanimal.js");
 
 module.exports = class Angx {
    constructor(x, y, index) {
@@ -119,7 +121,7 @@ module.exports = class Angx {
        }
    }
    die() {
-       matrix[this.y][this.x] = 4;
+       matrix[this.y][this.x] = 20;
        var newX = this.x;
        var newY = this.y;
        var newDeadanimal = new Deadanimal(newX, newY, this.index);
